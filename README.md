@@ -3,6 +3,10 @@
 > A Vue.js project
 
 ![](https://github.com/taratatuy/favorites-list-component/blob/master/w.mp4)
+<video width="320" height="240">
+  <source src="[w.mp4](https://github.com/taratatuy/favorites-list-component/blob/master/w.mp4)" type="video/mp4">
+</video>
+
 
 ## Build Setup
 
