@@ -2,6 +2,8 @@
 
 > A Vue.js project
 
+![](https://github.com/taratatuy/favorites-list-component/blob/master/w.mp4)
+
 ## Build Setup
 
 ``` bash
