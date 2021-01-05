@@ -2,7 +2,7 @@
 
 > A Vue.js project
 
-![An example](https://vk.com/doc150719372_583586496?hash=f8e98cfc1e39f29e01&dl=f5dab3f492374711b7)
+![An example](w.gif)
 
 
 ## Build Setup
