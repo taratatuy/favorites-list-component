@@ -2,10 +2,7 @@
 
 > A Vue.js project
 
-![](https://github.com/taratatuy/favorites-list-component/blob/master/w.mp4)
-<video width="320" height="240">
-  <source src="[w.mp4](https://github.com/taratatuy/favorites-list-component/blob/master/w.mp4)" type="video/mp4">
-</video>
+![An example](https://vk.com/doc150719372_583586496?hash=f8e98cfc1e39f29e01&dl=f5dab3f492374711b7)
 
 
 ## Build Setup
