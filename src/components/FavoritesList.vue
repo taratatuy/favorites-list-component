@@ -37,8 +37,11 @@
             >{{parseInt(track.duration / 60) + ':' + PrettyTimeFormat(parseInt(track.duration % 60))}}</div>
             <div
               class="song-controls col-1 d-flex align-items-center justify-content-center"
-              @click="hideTrack($event, track.fileName)"
             >X</div>
+            <!-- <div
+              class="song-controls col-1 d-flex align-items-center justify-content-center"
+              @click="hideTrack($event, track.fileName)"
+            >X</div> -->
           </div>
         </div>
       </div>
@@ -51,15 +54,36 @@ export default {
   name: "FavoritesList",
   data() {
     return {
-      url: "http://localhost:10204/",
+      url: "https://dailyradio-server.herokuapp.com/",
       accessToken: "asdas",
       refreshToken:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFzZCIsImlhdCI6MTU3MjM1ODU2MH0.Y7w-hVZyDxul-t26JHT6qgTDuFl2M-8PsP8kv1kM_zI",
+        "asdasd",
       tracks: []
     };
   },
   computed: {},
   methods: {
+    auth() {
+      this.$http
+        .post(
+          this.url + "auth/login",
+          {
+                login: "asd",
+                password: "qwe"
+          },
+        )
+        .then(res => {
+          this.accessToken = res.body.accessToken
+          this.refreshToken = res.body.freshToken
+          this.getTracks();
+        })
+        .catch(async res => {
+          console.log("Auth error..");
+          if (res.status == 403) {
+            await this.refreshTokens({ func: this.getTracks });
+          }
+        });
+    },
     hideTrack(e, filename) {
       e.target.parentElement.style.visibility = "hidden";
       this.delTrack(filename, e.target.parentElement);
@@ -151,7 +175,8 @@ export default {
     }
   },
   created() {
-    this.getTracks();
+    this.auth();
+    // this.getTracks();
   }
 };
 </script>
